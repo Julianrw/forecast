@@ -2,7 +2,7 @@
 weatherApp.config(function($sceDelegateProvider) {
 	$sceDelegateProvider.resourceUrlWhitelist([
 		'self',
-		'http://api.openweathermap.org/**'
+		'https://api.openweathermap.org/**'
 		])
 });
 
