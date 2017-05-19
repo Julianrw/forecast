@@ -1,0 +1,27 @@
+<!-- the forcast view -->
+<h1>Forecast Page For {{city}}</h1>
+<hr/>
+Days: <a href="#!/forecast/1" ng-class="{'bg-success': days ==='1'}">1</a> |<a href="#!/forecast/3"  ng-class="{'bg-success': days ==='3'}">3</a> | <a href="#!/forecast/5"  ng-class="{'bg-success': days ==='5'}">5</a> | <a href="#!/forecast/7"  ng-class="{'bg-success': days ==='7'}">7</a>
+<hr/>
+Temperature Display:
+<form name="degreePicker">
+	<label>
+		<input type="radio" ng-model="degree" value="Celsius">
+		Celsius
+	</label>
+	<label>
+		<input type="radio" ng_model="degree" value="Fahrenheit">
+		Fahrenheit
+	</label>
+</form>
+<hr/>
+	<p>
+		<a href="#!/" class="btn btn-primary">Back to Search</a>
+	</p>
+<div ng-repeat="w in weatherResult.list">
+	<div class="row">
+		<div class="col-md-12">
+			<weather-report weather-day="w" convert-to-standard-temp="convertToStdUnit(daytimeTemp, degree)" convert-to-date="convertToDate(dt)" date-format="MMM/d/y"></weather-report>
+		</div>
+	</div>
+</div>
