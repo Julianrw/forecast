@@ -17,7 +17,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
 	$scope.city = cityService.city;
 	$scope.days = $routeParams.days || '1';
 	//call for weather info from 'openweathermap.org's API. OpenWeatherMap has been whitelisted in routes.js for the sake of easy access.
-	$scope.weatherAPI = $resource("https://api.openweathermap.org/data/2.5/forecast/daily?appid=0f6b75f666544e27da21502649840b0e", {get: {method: "JSONP"}});
+	$scope.weatherAPI = $resource("http://api.openweathermap.org/data/2.5/forecast/daily?appid=0f6b75f666544e27da21502649840b0e", {get: {method: "JSONP"}});
 	$scope.weatherResult = $scope.weatherAPI.get({ q: $scope.city, cnt: $scope.days});
 
 	//sets, and then watchs for, the unit used for tempurature display on the page.

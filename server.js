@@ -3,4 +3,4 @@ var app = express();
 
 app.use(express.static(__dirname + "/app"));
 app.listen(process.env.PORT || 3000);
-console.log("Server is up on port 3000");
+console.log("Server is up on port " + process.env.PORT || 3000);
